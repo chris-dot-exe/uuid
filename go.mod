@@ -1,1 +1,1 @@
-module github.com/google/uuid
+module github.com/chris-dot-exe/uuid
