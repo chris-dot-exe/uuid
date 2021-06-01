@@ -108,6 +108,8 @@ func Parse(s string) (UUID, error) {
 func ParseBytes(b []byte) (UUID, error) {
 	var uuid UUID
 	switch len(b) {
+	case 0:
+		return Nil, nil
 	case 36: // xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 	case 36 + 9: // urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 		if !bytes.Equal(bytes.ToLower(b[:9]), []byte("urn:uuid:")) {
