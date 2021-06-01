@@ -55,6 +55,8 @@ func IsInvalidLengthError(err error) bool {
 func Parse(s string) (UUID, error) {
 	var uuid UUID
 	switch len(s) {
+	case 0:
+		return Nil, nil
 	// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 	case 36:
 
